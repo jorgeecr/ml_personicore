@@ -143,13 +143,7 @@ import java.util.List;
 //arreglar este
   private void setDevice(Device device) {
     if (this.device != device) {
-      LOGGER.d("Updating  device: " + device);
       this.device = device;
-      final boolean threadsEnabled = device == Device.CPU;
-      plusImageView.setEnabled(threadsEnabled);
-      minusImageView.setEnabled(threadsEnabled);
-      threadsTextView.setText(threadsEnabled ? String.valueOf(numThreads) : "N/A");
-      onInferenceConfigurationChanged();
     }
   }
 
