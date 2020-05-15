@@ -4,12 +4,15 @@ En este repo voy a subir el código a medias de reconocimiento de grid y de text
 
 El código está basado (semi-plagiado) en el siguiente repo:
 https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/android
+Este proyecto usa cuatro modelos y una UI para poder elegir entre ellos y para ver los resultados de inferencia directamente en la pantalla. Nosotros obviamente no necesitaremos estos elementos, pero hay que ser cuidadoso al momento de borrar líneas, porque hay muchas interdependencias, y eso fue lo que más me costó trabajo.
 
 
 ## Dependencias de Tensorflow
 
 El primer paso para incorporar tensorflow al proyecto es importar las dependencias en Gradle, copio el link de las instrucciones
 https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/experimental/support/java/README.md#Import-Gradle-dependency-and-other-settings
+
+Como se indica en este link, el modelo se ubicará en el directorio /assets.
 
 ## Estructura del proyecto
 
@@ -21,6 +24,15 @@ Vamos a modificar las siguientes clases:
 
 En el caso de la clase CameraActivity, es semejante a la clase del mismo nombre en la app de los chinos, pero la parte de 
 ```java
-OnPreviewFrame 
+OnPreviewFrame()
 ```
 nosotros la incluimos en la clase CameraController.java. Entonces, lo ideal será incluir nuestro código de la clase CameraActivity dentro de CameraController, pero esto es una de las cosas que quisiera discutir.
+ClassifierFloatEfficientNet en nuestro caso será llamado GridClassifier.
+
+### Cosas que faltan por hacer:
+
+- [x] Obviamente probar que todo el codigo funcione.
+- [x] Probar que el resultado de la inferencia es un array de 1x1. (Mañana te diré a qué me refiero exactamente).
+- [x] ClassifierActivity es una activity que extiende CameraActivity y hay que ver cómo se incorporaría en la app de los chinos.
+
+
