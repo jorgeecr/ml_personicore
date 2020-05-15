@@ -4,7 +4,8 @@ En este repo voy a subir el código a medias de reconocimiento de grid y de text
 
 El código está basado (semi-plagiado) en el siguiente repo:
 https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/android
-Este proyecto usa cuatro modelos y una UI para poder elegir entre ellos y para ver los resultados de inferencia directamente en la pantalla. Nosotros obviamente no necesitaremos estos elementos, pero hay que ser cuidadoso al momento de borrar líneas, porque hay muchas interdependencias, y eso fue lo que más me costó trabajo.
+
+Esta sample app reconoce imagenes de la camara y tiene una interfaz gráfica para poder elegir entre cuatro opciones de modelos y los resultados de la inferencia se pueden ver directamente en la pantalla. Nosotros obviamente no necesitaremos estas opciones (sólo necesitamos un modelo y no necesitamos mostrar nada en la pantalla), pero hay que ser cuidadoso al momento de borrar líneas de código, porque hay muchas interdependencias, y esto fue lo que más me costó trabajo.
 
 
 ## Dependencias de Tensorflow
